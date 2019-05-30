@@ -7,12 +7,12 @@ namespace MyCore.BaseProject.EntityFrameworkCore
     {
         public static void Configure(DbContextOptionsBuilder<BaseProjectDbContext> builder, string connectionString)
         {
-            builder.UseSqlServer(connectionString);
+            builder.UseSqlServer(connectionString, b => b.UseRowNumberForPaging());
         }
 
         public static void Configure(DbContextOptionsBuilder<BaseProjectDbContext> builder, DbConnection connection)
         {
-            builder.UseSqlServer(connection);
+            builder.UseSqlServer(connection, b => b.UseRowNumberForPaging());
         }
     }
 }
