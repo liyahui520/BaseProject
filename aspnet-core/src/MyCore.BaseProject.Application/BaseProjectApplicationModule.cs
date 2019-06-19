@@ -2,6 +2,7 @@
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using MyCore.BaseProject.Authorization;
+using MyCore.BaseProject.BasicData.Teachers;
 
 namespace MyCore.BaseProject
 {
@@ -23,6 +24,7 @@ namespace MyCore.BaseProject
 
             Configuration.Modules.AbpAutoMapper().Configurators.Add(
                 // Scan the assembly for classes which inherit from AutoMapper.Profile
+                
                 cfg => cfg.AddProfiles(thisAssembly)
             );
         }
