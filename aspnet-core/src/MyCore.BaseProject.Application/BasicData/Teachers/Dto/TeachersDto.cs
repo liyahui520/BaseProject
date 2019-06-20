@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Abp.AutoMapper;
 
 namespace MyCore.BaseProject.Teachers.Dto
 {
+    [AutoMapFrom(typeof(BasicData.Teachers.Teachers))]
     public class TeachersDto
     {
 

@@ -9,11 +9,9 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace>MyCore.BaseProject</RootNamespace>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyCore.BaseProject.Core\MyCore.BaseProject.Core.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BasicData\" />
   </ItemGroup>
 </Project>

@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using Abp.AspNetCore;
 using Abp.AspNetCore.Configuration;
 using Abp.AspNetCore.SignalR;
+using Abp.Configuration.Startup;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Abp.Zero.Configuration;
@@ -47,6 +48,8 @@ namespace MyCore.BaseProject
                  );
 
             ConfigureTokenAuth();
+            //返回详细报错信息
+            //Configuration.Modules.AbpWebCommon().SendAllExceptionsToClients = true;
         }
 
         private void ConfigureTokenAuth()

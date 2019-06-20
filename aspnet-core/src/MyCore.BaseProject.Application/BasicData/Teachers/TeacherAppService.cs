@@ -1,26 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Collections.Generic; 
 using System.Threading.Tasks;
+using Abp.Authorization;
 using Abp.AutoMapper;
 using Abp.Domain.Repositories;
-using Abp.Domain.Uow; 
-using MyCore.BaseProject.Teachers.Dto;
-using MyCore.BaseProject.BasicData.Teachers;
+using Abp.Domain.Uow;
+using MyCore.BaseProject.Authorization;
+using MyCore.BaseProject.Teachers.Dto; 
 
-namespace MyCore.BaseProject.Teachers
+namespace MyCore.BaseProject.BasicData.Teachers
 {
     /// <summary>
     /// 教师数据服务类
     /// by yahui.li at 2019-06-19
     /// </summary>
+    [AbpAuthorize(PermissionNames.Page_Teachers)]
     public class TeacherAppService : BaseProjectAppServiceBase, ITeacherAppService
     {
         #region 仓储实现
-        private readonly IRepository<BasicData.Teachers.Teachers> _teachersReppository;
+        private readonly IRepository<Teachers> _teachersReppository;
         private readonly IUnitOfWorkManager _unitOfWorkManager;
 
-        public TeacherAppService(IRepository<BasicData.Teachers.Teachers> teachersReppository, IUnitOfWorkManager unitOfWorkManager)
+        public TeacherAppService(IRepository<Teachers> teachersReppository, IUnitOfWorkManager unitOfWorkManager)
         {
             _teachersReppository = teachersReppository;
             _unitOfWorkManager = unitOfWorkManager;
@@ -35,9 +36,9 @@ namespace MyCore.BaseProject.Teachers
         /// <returns></returns>
         public async Task<List<TeachersDto>> QueryTeachers()
         {
-            List<BasicData.Teachers.Teachers> teachersDtos = new List<BasicData.Teachers.Teachers>();
             try
-            {
+            { 
+                List<Teachers> teachersDtos;
                 if (AbpSession.TenantId == null)
                 {
                     using (_unitOfWorkManager.Current.DisableFilter(AbpDataFilters.MayHaveTenant))
@@ -64,11 +65,11 @@ namespace MyCore.BaseProject.Teachers
         /// </summary>
         /// <param name="info"></param>
         /// <returns></returns>
-        public async Task<BasicData.Teachers.Teachers> CreateTeacher(TeacherInfo info)
+        public async Task<Teachers> CreateTeacher(TeacherInfo info)
         {
             try
             { 
-                BasicData.Teachers.Teachers entity = info.MapTo<BasicData.Teachers.Teachers>();
+                Teachers entity = info.MapTo<Teachers>();
                 if (await _teachersReppository.CountAsync(s=>s.TeacherName==info.TeacherName)>0)
                 {
                     throw new Exception("该教师名称已存在!");
@@ -107,7 +108,7 @@ namespace MyCore.BaseProject.Teachers
         {
             try
             {
-                BasicData.Teachers.Teachers entity = info.MapTo<BasicData.Teachers.Teachers>();
+                Teachers entity = info.MapTo<Teachers>();
                 await _teachersReppository.UpdateAsync(entity);
             }
             catch (Exception e)

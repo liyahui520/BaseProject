@@ -14,6 +14,7 @@
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <RootNamespace>MyCore.BaseProject</RootNamespace>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyCore.BaseProject.Application\MyCore.BaseProject.Application.csproj" />

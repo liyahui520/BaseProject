@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+using System.Collections.Generic; 
 using System.Threading.Tasks;
-using Abp.Application.Services;
-using Abp.AutoMapper;
-using Abp.Domain.Uow;
+using Abp.Application.Services; 
 using MyCore.BaseProject.Teachers.Dto;
 
-namespace MyCore.BaseProject.Teachers
+namespace MyCore.BaseProject.BasicData.Teachers
 {
     /// <summary>
     /// 教师服务接口
     /// by yahui.li at 2019-06-19
     /// </summary>
-     interface ITeacherAppService : IApplicationService
+    public interface ITeacherAppService : IApplicationService
     {
         /// <summary>
         /// 查询全部教师信息
@@ -26,7 +23,7 @@ namespace MyCore.BaseProject.Teachers
         /// </summary>
         /// <param name="info"></param>
         /// <returns></returns>
-        Task<BasicData.Teachers.Teachers> CreateTeacher(TeacherInfo info);
+        Task<Teachers> CreateTeacher(TeacherInfo info);
 
         /// <summary>
         /// 删除教师信息
