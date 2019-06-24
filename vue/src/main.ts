@@ -10,6 +10,7 @@ import SignalRAspNetCoreHelper from './lib/SignalRAspNetCoreHelper';
 Vue.use(iView);
 import store from './store/index';
 Vue.config.productionTip = false;
+import 'lib-flexible'
 import { appRouters,otherRouters} from './router/router';
 if(!abp.utils.getCookieValue('Abp.Localization.CultureName')){
   let language=navigator.language;

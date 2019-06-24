@@ -1,4 +1,10 @@
-﻿declare namespace abp {
+﻿/*
+ * @Author: yhli 
+ * @Date: 2019-06-24 11:52:36 
+ * @Last Modified by:   yhli 
+ * @Last Modified time: 2019-06-24 11:52:36 
+ */
+declare namespace abp {
 
     let appPath: string;
 
