@@ -14,7 +14,7 @@ namespace MyCore.BaseProject.BasicData.Teachers
     /// 教师数据服务类
     /// by yahui.li at 2019-06-19
     /// </summary>
-    [AbpAuthorize(PermissionNames.Page_Teachers)]
+    [AbpAuthorize(PermissionNames.Pages_Teachers)]
     public class TeacherAppService : BaseProjectAppServiceBase, ITeacherAppService
     {
         #region 仓储实现

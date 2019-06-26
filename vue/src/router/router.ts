@@ -60,7 +60,7 @@ export const appRouters: Array<Router> = [{
     name: 'baseData',
     permission: '',
     meta: { title: 'BaseData' },
-    icon: '&#xe68a;',
+    icon: '&#xe9d8;',
     component: main,
     children: [
         { path: 'teacher', permission: 'Pages.Teachers', meta: { title: 'Teachers' }, name: 'teachers', component: () => import('@/views/baseData/teachers/teacher.vue') }

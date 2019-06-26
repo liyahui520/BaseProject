@@ -11,6 +11,6 @@
         /// <summary>
         /// 教师权限
         /// </summary>
-        public const string Page_Teachers = "Page.Teachers";
+        public const string Pages_Teachers = "Pages.Teachers";
     }
 }

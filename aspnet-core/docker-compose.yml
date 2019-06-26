@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  mycore.baseproject.web.host:
+    image: ${DOCKER_REGISTRY-}mycorebaseprojectwebhost
+    build:
+      context: .
+      dockerfile: src/MyCore.BaseProject.Web.Host/Dockerfile
